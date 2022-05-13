@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 /**
  * @author Admin
  * @createTime 2022/5/12 12:49
@@ -18,5 +20,10 @@ public class TestController {
     @GetMapping("/hello")
     public String hello(){
         return "Hello World!";
+    }
+
+    @PostMapping("/hello/post")
+    public String helloPost(String name){
+        return "Hello World! POST,"+name;
     }
 }
