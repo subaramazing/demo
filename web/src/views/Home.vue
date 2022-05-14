@@ -9,7 +9,7 @@
       >
         <a-sub-menu key="sub1">
           <template #title>
-            <span><user-outlined />subnav 11</span>
+            <span><user-outlined />subnav 12</span>
           </template>
           <a-menu-item key="1">option1</a-menu-item>
           <a-menu-item key="2">option2</a-menu-item>
