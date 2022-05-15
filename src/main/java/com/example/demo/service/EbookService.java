@@ -7,6 +7,7 @@ import com.example.demo.req.EBookReq;
 import com.example.demo.resp.EBookResp;
 import com.example.demo.util.CopyUtil;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -26,7 +27,9 @@ public class EbookService {
     public List<EBookResp> list(EBookReq req){
         EBookExample eBookExample = new EBookExample();
         EBookExample.Criteria criteria = eBookExample.createCriteria();
-        criteria.andNameLike("%" + req.getName() + "%");
+        if (!ObjectUtils.isEmpty(req.getName())){
+            criteria.andNameLike("%" + req.getName() + "%");
+        }
         List<EBook> eBooklist = eBookMapper.selectByExample(eBookExample);
 
 //        List<EBookResp> respList = new ArrayList<>();
